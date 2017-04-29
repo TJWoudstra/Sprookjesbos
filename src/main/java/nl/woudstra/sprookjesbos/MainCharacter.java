@@ -33,7 +33,7 @@ public abstract class MainCharacter extends Character {
         basicHitPoints = (int) (1.05 * basicHitPoints);
         maxHitPoints = basicHitPoints + additionalHitpoints;
         spellPoints = (int) (1.05 * spellPoints);
-        basicSpellPoints = (int) (1.05 * spellPoints);
+        basicSpellPoints = (int) (1.05 * basicSpellPoints);
         maxSpellPoints = basicSpellPoints + additionalSpellPoints;
         level++;
     }

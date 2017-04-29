@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 public class KnightTest {
 
     @Test
+    // Test the initial values and check the values after increase of level
     public void itShouldInitializeCorrectly(){
         Knight knight = new Knight();
         assertEquals(0, knight.level);
@@ -17,12 +18,11 @@ public class KnightTest {
         assertEquals(200, knight.maxHitPoints);
         assertEquals(20, knight.spellPoints);
         assertEquals(20, knight.maxSpellPoints);
-        System.out.println("Knight level: "+ knight.level);
-        System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
-        System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
         knight.growLevel();
-        System.out.println("Knight level: "+ knight.level);
-        System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
-        System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
+        assertEquals(1, knight.level);
+        assertEquals(210, knight.hitPoints);
+        assertEquals(210, knight.maxHitPoints);
+        assertEquals(21, knight.spellPoints);
+        assertEquals(21, knight.maxSpellPoints);
     }
 }
