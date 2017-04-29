@@ -15,6 +15,7 @@ public class KnightTest {
         assertEquals(0, knight.level);
         assertEquals(200, knight.hitPoints);
         assertEquals(200, knight.maxHitPoints);
+        assertEquals(20, knight.spellPoints);
         System.out.println("Knight level: "+ knight.level);
         System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
         System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
