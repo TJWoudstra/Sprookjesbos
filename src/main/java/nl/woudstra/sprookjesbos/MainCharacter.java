@@ -28,7 +28,7 @@ public abstract class MainCharacter extends Character {
 
     }
     //hitpoints herzien vanwege hitpoints door items
-    public void growLevel(){
+    public void incrementLevel(){
         hitPoints = (int) (1.05 * hitPoints);
         basicHitPoints = (int) (1.05 * basicHitPoints);
         maxHitPoints = basicHitPoints + additionalHitpoints;

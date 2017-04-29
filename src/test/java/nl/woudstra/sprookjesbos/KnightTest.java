@@ -11,14 +11,14 @@ public class KnightTest {
 
     @Test
     // Test the initial values and check the values after increase of level
-    public void itShouldInitializeCorrectly(){
+    public void testInitializationKnightAndIncrementLevel(){
         Knight knight = new Knight();
         assertEquals(0, knight.level);
         assertEquals(200, knight.hitPoints);
         assertEquals(200, knight.maxHitPoints);
         assertEquals(20, knight.spellPoints);
         assertEquals(20, knight.maxSpellPoints);
-        knight.growLevel();
+        knight.incrementLevel();
         assertEquals(1, knight.level);
         assertEquals(210, knight.hitPoints);
         assertEquals(210, knight.maxHitPoints);
