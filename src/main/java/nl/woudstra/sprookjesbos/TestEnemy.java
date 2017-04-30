@@ -6,11 +6,6 @@ package nl.woudstra.sprookjesbos;
 public class TestEnemy extends Character {
     public TestEnemy() {
         setMaxHitPoints(50);
-        setHitPoints(); = 50;
-    }
-
-    @Override
-    public void attack(Character character) {
-        // verder uitwerken
+        setHitPoints(50);
     }
 }

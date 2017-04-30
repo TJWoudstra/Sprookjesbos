@@ -29,45 +29,21 @@ public abstract class MainCharacter extends Character {
     }
 
     public void incrementLevel(){
-        setHitPoints( (int) (1.05 * getHitPoints() ) );
         basicHitPoints = (int) (1.05 * basicHitPoints);
-        setMaxHitPoints(); = basicHitPoints + additionalHitpoints;
-        setSpellPoints( (int) (1.05 * getSpellPoints() ) );
+        setMaxHitPoints(basicHitPoints + additionalHitpoints);
+        setHitPoints( (int) (1.05 * getHitPoints() ) );
         basicSpellPoints = (int) (1.05 * basicSpellPoints);
         setMaxSpellPoints(basicSpellPoints + additionalSpellPoints);
-        setLevel(getLevel()++);
+        setSpellPoints( (int) (1.05 * getSpellPoints() ) );
+        setLevel(getLevel() + 1);
     }
-
-    public void attack(Character character) {
-        //zonder wapen
-        if (equipment.weapon == null) {
-            //indien niet raak
-            if (Math.random() < 0.3) {
-                System.out.println("Miss!");
-            } else {
-                System.out.println("Aanval zonder wapen"); // nog verder uitwerken!!!!
-            }
-        }
-            //met wapen
-        else{
-                if (100 * Math.random() > weapon.changeOfHit) {   // indien niet raak
-                    System.out.println("Miss!");
-                } else {
-                    boolean criticalHit = 100 * Math.random() < weapon.criticalHitRate;
-                    if (criticalHit) {
-                        int damage;  // veel verder uitwerken
-                    }
-                }
-            }
-        }
 
     public void simpleAttack(Character character){
         int damage = 20 + (int) (Math.random() * 10);
         System.out.println("damage: " + damage );
-        character.setHitPoints(getHitPoints() -= damage);
-        if(character.getHitPoints() == 0){
-            character.status.isAlive = false;
-        }
+        character.setHitPoints(character.getHitPoints() - damage);
+
+        if(character.getHitPoints() == 0) character.status.setAlive(false);
     }
 
     //getters & setters
