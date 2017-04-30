@@ -7,16 +7,17 @@ import java.awt.*;
  * Created by Tieme & Sylvia on 30-4-2017.
  */
 public class battlemenu {
-    public static void main(String[] args){
-        Knight knight = new Knight();
-        MainCharacter[] mainCharacters = new MainCharacter[MainCharacter.totalMainCharacters];
+    JFrame frame;
+    JTextArea messageField;
 
-        JFrame frame = new JFrame();
+
+    public void createMenu(){
+        frame = new JFrame("Battle");
         frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //message area south
-        JTextArea messageField = new JTextArea(5, 20);
+        messageField = new JTextArea(5, 20);
         messageField.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(messageField);
         messageField.setLineWrap(true);
@@ -24,20 +25,24 @@ public class battlemenu {
         frame.getContentPane().add(BorderLayout.SOUTH, scrollPane);
 
         //Panel east
-        JPanel characterStatistics = new JPanel();
-        characterStatistics.setBackground(Color.darkGray);
-        characterStatistics.setLayout(new BoxLayout(characterStatistics, BoxLayout.Y_AXIS));
+        Box characterBox = new Box(BoxLayout.Y_AXIS);
+        characterBox.setLayout(new BoxLayout(characterBox, BoxLayout.Y_AXIS));
 
-        JTextField nameText = new JTextField(knight.getName());
-        JTextField hitpointsText = new JTextField("HP: "+ knight.getHitPoints() + "/" + knight.getMaxHitPoints());
-        JTextField spellpointsField = new JTextField("SP: " + knight.getSpellPoints() + "/" + knight.getMaxSpellPoints());
-
-        characterStatistics.add(nameText);
-        characterStatistics.add(hitpointsText);
-        characterStatistics.add(spellpointsField);
-
-        frame.getContentPane().add(BorderLayout.EAST, characterStatistics);
-
+        frame.getContentPane().add(BorderLayout.EAST, characterBox);
         frame.setVisible(true);
+
+
+    }
+    public void createCharacterPanel(MainCharacter mainCharacter){
+        JPanel characterPanel = new JPanel();
+        characterPanel.setLayout(new BoxLayout(characterPanel, BoxLayout.Y_AXIS));
+
+        JTextField nameText = new JTextField(mainCharacter.getName());
+        JTextField hitpointsText = new JTextField("HP: "+ mainCharacter.getHitPoints() + "/" + mainCharacter.getMaxHitPoints());
+        JTextField spellpointsField = new JTextField("SP: " + mainCharacter.getSpellPoints() + "/" + mainCharacter.getMaxSpellPoints());
+
+        characterPanel.add(nameText);
+        characterPanel.add(hitpointsText);
+        characterPanel.add(spellpointsField);
     }
 }
