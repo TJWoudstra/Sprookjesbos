@@ -6,23 +6,20 @@ package nl.woudstra.sprookjesbos;
 public class Knight extends MainCharacter {
     public Knight() {
         setMaxHitPoints(200);
+        setBasicHitPoints(getMaxHitPoints());
         setHitPoints(getMaxHitPoints() );
 
         setMaxSpellPoints(20);
+        setBasicSpellPoints(getMaxSpellPoints());
         setSpellPoints(getMaxSpellPoints());
 
-        maxHitPoints = hitPoints;
-        basicHitPoints = hitPoints;
-        maxSpellPoints = spellPoints;
-        basicSpellPoints = spellPoints;
+        statistics.setSpeed(30);
+        statistics.setStrength(50);
+        statistics.setMagicPower(10);
 
-        speed = 30;
-        strength = 50;
-        magicPower = 10;
+        weaponPossibilities.setCanHandleSword(true);
 
-        canHandleSword = true;
-        canWearShield = true;
-        canUsePotions = true;
+        armorPossibilities.setCanWearShield(true);
 
     }
 }

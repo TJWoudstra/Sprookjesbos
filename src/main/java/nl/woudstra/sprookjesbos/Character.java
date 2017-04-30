@@ -6,6 +6,7 @@ package nl.woudstra.sprookjesbos;
 public abstract class Character {
     CharacterStatus status;
     Resistances resistances;
+    Statistics statistics;
 
     private int hitPoints;                      //hitpoints, spellpoints
     private int maxHitPoints;
@@ -20,6 +21,7 @@ public abstract class Character {
     public Character() {
         status = new CharacterStatus();
         resistances = new Resistances();
+        statistics = new Statistics();
     }
                                                 //getters & setters
 

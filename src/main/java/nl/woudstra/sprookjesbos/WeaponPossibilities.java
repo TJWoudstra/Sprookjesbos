@@ -5,4 +5,15 @@ package nl.woudstra.sprookjesbos;
  */
 public class WeaponPossibilities {
     private boolean canHandleSword;
+
+
+    //getters & setters
+
+    public boolean isCanHandleSword() {
+        return canHandleSword;
+    }
+
+    public void setCanHandleSword(boolean canHandleSword) {
+        this.canHandleSword = canHandleSword;
+    }
 }

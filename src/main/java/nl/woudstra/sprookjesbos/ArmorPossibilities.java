@@ -5,4 +5,12 @@ package nl.woudstra.sprookjesbos;
  */
 public class ArmorPossibilities {
     private boolean canWearShield;
+
+    public boolean CanWearShield() {
+        return canWearShield;
+    }
+
+    public void setCanWearShield(boolean canWearShield) {
+        this.canWearShield = canWearShield;
+    }
 }
