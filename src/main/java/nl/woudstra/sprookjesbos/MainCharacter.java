@@ -9,6 +9,7 @@ public abstract class MainCharacter extends Character {
 
     private String name;
     private int experience;
+    final int mainCharacterID;
 
     private int basicHitPoints;       //maxHitPoints == basicHitpoints + addditionalHitpoints
     private int additionalHitpoints;
@@ -21,6 +22,7 @@ public abstract class MainCharacter extends Character {
 
     public MainCharacter() {
         totalMainCharacters++;
+        mainCharacterID = totalMainCharacters - 1;
         totalMainCharactersAlive++;
         name = "Character" + totalMainCharacters;
         weaponPossibilities = new WeaponPossibilities();
