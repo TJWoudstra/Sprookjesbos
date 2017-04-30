@@ -1,5 +1,7 @@
 package nl.woudstra.sprookjesbos;
 
+import nl.woudstra.sprookjesbos.characters.MainCharacter;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,11 +11,6 @@ import java.awt.*;
 public class battlemenu {
     JFrame frame;
     JTextArea messageField;
-    MainCharacter mc0;
-    MainCharacter mc1;
-    MainCharacter mc2;
-    MainCharacter mc3;
-
 
     public void createMenu(){
         frame = new JFrame("Battle");

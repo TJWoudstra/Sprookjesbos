@@ -1,4 +1,4 @@
-package nl.woudstra.sprookjesbos;
+package nl.woudstra.sprookjesbos.characters;
 
 /**
  * Created by Tieme on 30-4-2017.

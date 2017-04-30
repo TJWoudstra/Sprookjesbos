@@ -1,5 +1,8 @@
 package nl.woudstra.sprookjesbos;
 
+import nl.woudstra.sprookjesbos.characters.Knight;
+import nl.woudstra.sprookjesbos.characters.enemies.TestEnemy;
+
 /**
  * Created by Tieme on 28-4-2017.
  */

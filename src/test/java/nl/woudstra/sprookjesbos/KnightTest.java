@@ -1,5 +1,6 @@
 package nl.woudstra.sprookjesbos;
 
+import nl.woudstra.sprookjesbos.characters.Knight;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

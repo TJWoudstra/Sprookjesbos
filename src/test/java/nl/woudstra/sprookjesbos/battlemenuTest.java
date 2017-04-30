@@ -1,9 +1,6 @@
 package nl.woudstra.sprookjesbos;
 
-import javax.swing.*;
-import java.awt.*;
-
-import static org.junit.Assert.*;
+import nl.woudstra.sprookjesbos.characters.Knight;
 
 /**
  * Created by Tieme & Sylvia on 30-4-2017.
@@ -16,8 +13,6 @@ public class battlemenuTest {
         Knight mainCharacter3 = new Knight();
 
         battlemenu battlemenu = new battlemenu();
-
-
     }
 
 }
