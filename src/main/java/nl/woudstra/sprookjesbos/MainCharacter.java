@@ -7,40 +7,40 @@ public abstract class MainCharacter extends Character {
     public static int totalMainCharacters;
     public static int totalMainCharactersAlive;
 
-    String name;
-    int experience;
-    int basicHitPoints;
-    int additionalHitpoints;
-    int basicSpellPoints;
-    int additionalSpellPoints;
+    private String name;
+    private int experience;
 
-    //wapens die character kan dragen nog verder uitwerken
-    boolean canHandleSword;
-    boolean canWearShield;
+    private int basicHitPoints;       //maxHitPoints == basicHitpoints + addditionalHitpoints
+    private int additionalHitpoints;
+    private int basicSpellPoints;     //maxSpellPoints == basicSpellpoints + addditionalSpellpoints
+    private int additionalSpellPoints;
 
-    //items nog verder aanvullen met Shield, Shoes, Ring1, Ring2, Amulet, Armor, Helmet
-    Weapon weapon;
+    WeaponPossibilities weaponPossibilities;    //weapons a maincharacter can handle
+    ArmorPossibilities armorPossibilities;      //armor a maincharacter can wear
+    Equipment equipment;                        //weapon(s) and armor a character wears
 
     public MainCharacter() {
         totalMainCharacters++;
         totalMainCharactersAlive++;
         name = "Character" + totalMainCharacters;
-
+        weaponPossibilities = new WeaponPossibilities();
+        armorPossibilities = new ArmorPossibilities();
+        equipment = new Equipment();
     }
-    //hitpoints herzien vanwege hitpoints door items
-    public void growLevel(){
-        hitPoints = (int) (1.05 * hitPoints);
+
+    public void incrementLevel(){
+        setHitPoints( (int) (1.05 * getHitPoints() ) );
         basicHitPoints = (int) (1.05 * basicHitPoints);
-        maxHitPoints = basicHitPoints + additionalHitpoints;
-        spellPoints = (int) (1.05 * spellPoints);
-        basicSpellPoints = (int) (1.05 * spellPoints);
-        maxSpellPoints = basicSpellPoints + additionalSpellPoints;
-        level++;
+        setMaxHitPoints(); = basicHitPoints + additionalHitpoints;
+        setSpellPoints( (int) (1.05 * getSpellPoints() ) );
+        basicSpellPoints = (int) (1.05 * basicSpellPoints);
+        setMaxSpellPoints(basicSpellPoints + additionalSpellPoints);
+        setLevel(getLevel()++);
     }
 
     public void attack(Character character) {
         //zonder wapen
-        if (weapon == null) {
+        if (equipment.weapon == null) {
             //indien niet raak
             if (Math.random() < 0.3) {
                 System.out.println("Miss!");
@@ -64,10 +64,59 @@ public abstract class MainCharacter extends Character {
     public void simpleAttack(Character character){
         int damage = 20 + (int) (Math.random() * 10);
         System.out.println("damage: " + damage );
-        character.hitPoints -= damage;
-        if(character.hitPoints < 0){
-            character.hitPoints = 0;
-            character.isAlive = false;
+        character.setHitPoints(getHitPoints() -= damage);
+        if(character.getHitPoints() == 0){
+            character.status.isAlive = false;
         }
+    }
+
+    //getters & setters
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public int getBasicHitPoints() {
+        return basicHitPoints;
+    }
+
+    public void setBasicHitPoints(int basicHitPoints) {
+        this.basicHitPoints = basicHitPoints;
+    }
+
+    public int getAdditionalHitpoints() {
+        return additionalHitpoints;
+    }
+
+    public void setAdditionalHitpoints(int additionalHitpoints) {
+        this.additionalHitpoints = additionalHitpoints;
+    }
+
+    public int getBasicSpellPoints() {
+        return basicSpellPoints;
+    }
+
+    public void setBasicSpellPoints(int basicSpellPoints) {
+        this.basicSpellPoints = basicSpellPoints;
+    }
+
+    public int getAdditionalSpellPoints() {
+        return additionalSpellPoints;
+    }
+
+    public void setAdditionalSpellPoints(int additionalSpellPoints) {
+        this.additionalSpellPoints = additionalSpellPoints;
     }
 }

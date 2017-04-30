@@ -5,8 +5,11 @@ package nl.woudstra.sprookjesbos;
  */
 public class Knight extends MainCharacter {
     public Knight() {
-        hitPoints = 200;
-        spellPoints = 20;
+        setMaxHitPoints(200);
+        setHitPoints(getMaxHitPoints() );
+
+        setMaxSpellPoints(20);
+        setSpellPoints(getMaxSpellPoints());
 
         maxHitPoints = hitPoints;
         basicHitPoints = hitPoints;

@@ -20,7 +20,7 @@ public class KnightTest {
         System.out.println("Knight level: "+ knight.level);
         System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
         System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
-        knight.growLevel();
+        knight.incrementLevel();
         System.out.println("Knight level: "+ knight.level);
         System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
         System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
