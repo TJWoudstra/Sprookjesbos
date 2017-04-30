@@ -23,5 +23,9 @@ public class KnightTest {
         assertEquals(210, knight.getMaxHitPoints());
         assertEquals(21, knight.getSpellPoints());
         assertEquals(21, knight.getMaxSpellPoints());
+        knight.incrementLevel();
+        assertEquals(2, knight.getLevel());
+        assertEquals(220, knight.getHitPoints());
+        assertEquals(220, knight.getMaxHitPoints());
     }
 }

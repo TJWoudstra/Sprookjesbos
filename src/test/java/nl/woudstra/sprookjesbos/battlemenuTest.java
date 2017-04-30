@@ -16,10 +16,7 @@ public class battlemenuTest {
         Knight mainCharacter3 = new Knight();
 
         battlemenu battlemenu = new battlemenu();
-        battlemenu.characterPanel(mainCharacter0);
-        battlemenu.characterPanel(mainCharacter1);
-        battlemenu.characterPanel(mainCharacter2);
-        battlemenu.characterPanel(mainCharacter3);
+
 
     }
 
