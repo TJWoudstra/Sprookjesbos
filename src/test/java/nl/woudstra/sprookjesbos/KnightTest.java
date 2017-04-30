@@ -12,17 +12,16 @@ public class KnightTest {
     @Test
     public void itShouldInitializeCorrectly(){
         Knight knight = new Knight();
-        assertEquals(0, knight.level);
-        assertEquals(200, knight.hitPoints);
-        assertEquals(200, knight.maxHitPoints);
-        assertEquals(20, knight.spellPoints);
-        assertEquals(20, knight.maxSpellPoints);
-        System.out.println("Knight level: "+ knight.level);
-        System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
-        System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
+        assertEquals(0, knight.getLevel());
+        assertEquals(200, knight.getHitPoints());
+        assertEquals(200, knight.getMaxHitPoints());
+        assertEquals(20, knight.getSpellPoints());
+        assertEquals(20, knight.getMaxSpellPoints());
         knight.incrementLevel();
-        System.out.println("Knight level: "+ knight.level);
-        System.out.println("hitpoints: " + knight.hitPoints + "/" + knight.maxHitPoints);
-        System.out.println("spellpoints: " + knight.spellPoints + "/" + knight.maxSpellPoints);
+        assertEquals(1, knight.getLevel());
+        assertEquals(210, knight.getHitPoints());
+        assertEquals(210, knight.getMaxHitPoints());
+        assertEquals(21, knight.getSpellPoints());
+        assertEquals(21, knight.getMaxSpellPoints());
     }
 }
