@@ -1,5 +1,6 @@
 package nl.woudstra.sprookjesbos;
 
+import nl.woudstra.sprookjesbos.GUI.Batleframe;
 import nl.woudstra.sprookjesbos.characters.Knight;
 
 /**
@@ -12,7 +13,8 @@ public class battlemenuTest {
         Knight mainCharacter2 = new Knight();
         Knight mainCharacter3 = new Knight();
 
-        battlemenu battlemenu = new battlemenu();
+        Batleframe batleframe = new Batleframe();
+        batleframe.createMenu(3);
     }
 
 }
