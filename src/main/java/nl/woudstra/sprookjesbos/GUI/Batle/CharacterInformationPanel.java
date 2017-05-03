@@ -1,7 +1,5 @@
 package nl.woudstra.sprookjesbos.GUI.Batle;
 
-import javafx.scene.layout.Border;
-
 import javax.swing.*;
 import java.awt.*;
 

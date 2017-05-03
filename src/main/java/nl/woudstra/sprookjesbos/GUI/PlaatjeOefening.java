@@ -8,7 +8,8 @@ import java.awt.Graphics;
         import java.awt.image.BufferedImage;
         import java.io.File;
         import java.io.IOException;
-        import java.util.logging.Level;
+import java.io.InputStream;
+import java.util.logging.Level;
         import java.util.logging.Logger;
         import javax.imageio.ImageIO;
         import javax.swing.JPanel;
@@ -19,7 +20,7 @@ public class PlaatjeOefening extends JPanel{
 
     public PlaatjeOefening() {
         try {
-            image = ImageIO.read(new File("/src/afbeeldingen/Achtergrond.jpg"));
+            image = ImageIO.read(getClass().getResource("/images/Knight.JPG"));
         } catch (IOException ex) {
             // handle exception...
         }
