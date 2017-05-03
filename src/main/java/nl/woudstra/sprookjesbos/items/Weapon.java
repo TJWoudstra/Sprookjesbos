@@ -15,6 +15,7 @@ public abstract class Weapon extends Item {
 
     int minimumDamage;
     int randomDamage;
+    int timesRandomDamage;
     String damageType = "Physical";
 
     public int weaponDamage(){
