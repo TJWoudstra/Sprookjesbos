@@ -7,21 +7,21 @@ import java.awt.*;
  * Created by Tieme & Sylvia on 3-5-2017.
  */
 public class SprookjebosFrame extends JFrame {
-    private Battlepanel mainPanel;
+    private Battlepanel battlepanel;
 
     public void startBatle(){
-        mainPanel = new Battlepanel();
-        add(BorderLayout.CENTER, mainPanel);
+        battlepanel = new Battlepanel();
+        add(BorderLayout.CENTER, battlepanel);
 
     }
-    public JPanel getMainPanel() {
-        return mainPanel;
+    public JPanel getBattlepanel() {
+        return battlepanel;
     }
 
 
     public SprookjebosFrame(){
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sprookjesbos");
+        setTitle("Sprookjesbos V0.1");
         }
 }

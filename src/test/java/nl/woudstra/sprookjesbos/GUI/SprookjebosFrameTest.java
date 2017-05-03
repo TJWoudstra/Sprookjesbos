@@ -1,5 +1,7 @@
 package nl.woudstra.sprookjesbos.GUI;
 
+import javax.swing.*;
+
 import static org.junit.Assert.*;
 
 /**
@@ -11,5 +13,4 @@ public class SprookjebosFrameTest {
         sprookjebosFrame.startBatle();
         sprookjebosFrame.setVisible(true);
     }
-
 }
