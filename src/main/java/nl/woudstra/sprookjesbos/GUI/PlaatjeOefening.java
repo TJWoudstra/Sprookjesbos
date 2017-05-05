@@ -20,7 +20,8 @@ public class PlaatjeOefening extends JPanel{
 
     public PlaatjeOefening() {
         try {
-            image = ImageIO.read(getClass().getResource("/images/Knight.JPG"));
+            image = ImageIO.read(getClass().getResource("/images/Achtergrond.JPG"));
+
         } catch (IOException ex) {
             // handle exception...
         }
@@ -29,6 +30,7 @@ public class PlaatjeOefening extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+
         g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
     }
 
