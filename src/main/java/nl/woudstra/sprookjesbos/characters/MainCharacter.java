@@ -41,7 +41,7 @@ public abstract class MainCharacter extends Character {
     }
 
     public void simpleAttack(Character character){
-        int damage = 20 + (int) (Math.random() * 10);
+        int damage = 20 + getDice().nextInt(10);
         System.out.println("damage: " + damage );
         character.setHitPoints(character.getHitPoints() - damage);
 

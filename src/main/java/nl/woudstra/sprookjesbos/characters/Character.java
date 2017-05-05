@@ -1,9 +1,12 @@
 package nl.woudstra.sprookjesbos.characters;
 
+import java.util.Random;
+
 /**
  * Created by Tieme on 9-4-2017.
  */
 public abstract class Character {
+    private Random dice = new Random();
     public CharacterStatus status;
     public Resistances resistances;
     public Statistics statistics;
@@ -24,6 +27,15 @@ public abstract class Character {
         statistics = new Statistics();
     }
                                                 //getters & setters
+
+
+    public Random getDice() {
+        return dice;
+    }
+
+    public void setDice(Random dice) {
+        this.dice = dice;
+    }
 
     public int getHitPoints() {                 //getters & setters
         return hitPoints;
