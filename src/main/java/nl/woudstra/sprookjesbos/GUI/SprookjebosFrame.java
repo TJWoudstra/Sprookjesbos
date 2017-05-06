@@ -14,7 +14,7 @@ public class SprookjebosFrame extends JFrame {
         add(BorderLayout.CENTER, battlepanel);
 
     }
-    public JPanel getBattlepanel() {
+    public Battlepanel getBattlepanel() {
         return battlepanel;
     }
 
@@ -23,5 +23,6 @@ public class SprookjebosFrame extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sprookjesbos V0.1");
+        setMinimumSize(new Dimension(1000,700));
         }
 }

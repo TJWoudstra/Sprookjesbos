@@ -10,12 +10,13 @@ public class CharacterInformationPanel extends JPanel {
 
     private CharacterInformation[] characterInformation;
 
-    public CharacterInformation[] getCharacterInformation() {
-        return characterInformation;
+    public CharacterInformation getCharacterInformation(int character) {
+        return characterInformation[character];
     }
 
     public CharacterInformationPanel(){
-        setLayout(new GridLayout(6, 1, 10, 10));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS ));
+
         javax.swing.border.Border border = BorderFactory.createEmptyBorder(5,5,5,5);
         setBorder(border);
 
@@ -27,8 +28,8 @@ public class CharacterInformationPanel extends JPanel {
             characterInformation[i] = new CharacterInformation();
             add(characterInformation[i]);
         }
-
-        add(new JButton("button"));
-
+        for(int i = 0;i<24;i++) {
+            add(new JLabel(" "));
+        }
     }
 }

@@ -20,7 +20,7 @@ public class PlaatjeOefening extends JPanel{
 
     public PlaatjeOefening() {
         try {
-            image = ImageIO.read(getClass().getResource("/images/Achtergrond.JPG"));
+            image = ImageIO.read(getClass().getResource("/images/Knight.JPG"));
 
         } catch (IOException ex) {
             // handle exception...

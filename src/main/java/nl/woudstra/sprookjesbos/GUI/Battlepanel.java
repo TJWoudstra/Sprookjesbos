@@ -35,8 +35,8 @@ public class Battlepanel extends JPanel {
         add(BorderLayout.SOUTH, informationPanel);
 
         // battleview werkt nog niet
-        PlaatjeOefening plaatjeOefening = new PlaatjeOefening();
-        add(BorderLayout.CENTER, plaatjeOefening);
+        battleview = new Battleview();
+        add(BorderLayout.CENTER, battleview);
 
         characterInformationPanel = new CharacterInformationPanel();  //characterinformation
         add(BorderLayout.EAST, characterInformationPanel);

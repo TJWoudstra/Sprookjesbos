@@ -26,6 +26,10 @@ public abstract class Character {
         resistances = new Resistances();
         statistics = new Statistics();
     }
+
+    public String getType(){
+        return "Character";
+    }
                                                 //getters & setters
 
 

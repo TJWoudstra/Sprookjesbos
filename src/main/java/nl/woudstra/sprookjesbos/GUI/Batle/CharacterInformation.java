@@ -29,6 +29,21 @@ public class CharacterInformation extends JPanel {
         return spText;
     }
 
+    public void setHpText(String hpText) {
+        this.hpText.setText(hpText);
+    }
+
+    public void setSpText(String spText) {
+        this.spText.setText(spText);
+    }
+
+    public void setCharacterLabel(String characterLabel) {
+        this.characterLabel.setText(characterLabel);
+    }
+
+    public void setNameLabel(String nameLabel) {
+        this.nameLabel.setText(nameLabel);
+    }
 
     public CharacterInformation(){
         setLayout(new GridLayout(3,2,10,10));   //set layout

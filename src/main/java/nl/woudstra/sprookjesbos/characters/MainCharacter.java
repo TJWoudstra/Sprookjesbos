@@ -31,13 +31,14 @@ public abstract class MainCharacter extends Character {
     }
 
     public void incrementLevel(){
+        setLevel(getLevel() + 1);
         basicHitPoints = (int) (1.05 * basicHitPoints);
         setMaxHitPoints(basicHitPoints + additionalHitpoints);
         setHitPoints( (int) (1.05 * getHitPoints() ) );
         basicSpellPoints = (int) (1.05 * basicSpellPoints);
         setMaxSpellPoints(basicSpellPoints + additionalSpellPoints);
         setSpellPoints( (int) (1.05 * getSpellPoints() ) );
-        setLevel(getLevel() + 1);
+
     }
 
     public void simpleAttack(Character character){
