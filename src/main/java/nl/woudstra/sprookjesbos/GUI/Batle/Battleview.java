@@ -35,7 +35,7 @@ public class Battleview extends JPanel {
         int y1 = (int) (0.3 * y);
 
         Image scaledBackground = backgroundBattle.getScaledInstance(x,y,Image.SCALE_SMOOTH);
-        Image scaledKnight = knightImage.getScaledInstance(x / 10,y / 10,Image.SCALE_SMOOTH );
+        Image scaledKnight = knightImage.getScaledInstance(x / 13,y / 10,Image.SCALE_SMOOTH );
 
         g.drawImage(scaledBackground, 0, 0, this); // see javadoc for more info on the parameters
 
