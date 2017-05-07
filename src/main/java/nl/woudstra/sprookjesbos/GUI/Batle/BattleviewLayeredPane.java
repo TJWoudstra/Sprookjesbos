@@ -9,15 +9,15 @@ import java.io.IOException;
 /**
  * Created by Tieme & Sylvia on 2-5-2017.
  */
-public class Battleview extends JPanel {
+public class BattleviewLayeredPane extends JLayeredPane {
 
     private BufferedImage backgroundBattle;
     private BufferedImage knightImage;
 
-    public Battleview() {
+    public BattleviewLayeredPane() {
         try {
             backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.JPG"));
-            knightImage = ImageIO.read(getClass().getResource("/images/Knight.gif"));
+            knightImage = ImageIO.read(getClass().getResource("/images/Knight.JPG"));
 
         } catch (IOException ex) {
             // handle exception...
