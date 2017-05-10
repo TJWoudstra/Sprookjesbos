@@ -3,6 +3,7 @@ package nl.woudstra.sprookjesbos.GUI;
 import nl.woudstra.sprookjesbos.GUI.Batle.Battleview;
 import nl.woudstra.sprookjesbos.GUI.Batle.CharacterInformationPanel;
 import nl.woudstra.sprookjesbos.GUI.Batle.InformationPanel;
+import nl.woudstra.sprookjesbos.characters.MainCharacter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,8 @@ import java.awt.*;
  * Created by Tieme & Sylvia on 3-5-2017.
  */
 public class Battlepanel extends JPanel {
+    private MainCharacter[] mainCharacters;
+
     private InformationPanel informationPanel;                  //south
     private Battleview battleview;                              //center
     private CharacterInformationPanel characterInformationPanel;     //east
@@ -28,7 +31,8 @@ public class Battlepanel extends JPanel {
     }
 
 
-    public Battlepanel(){
+    public Battlepanel(MainCharacter[] mainCharacters){
+        this.mainCharacters = mainCharacters;
         setLayout(new BorderLayout());    //layout
 
         informationPanel = new InformationPanel();    //informationPanel
@@ -38,7 +42,7 @@ public class Battlepanel extends JPanel {
         battleview = new Battleview();
         add(BorderLayout.CENTER, battleview);
 
-        characterInformationPanel = new CharacterInformationPanel();  //characterinformation
+        characterInformationPanel = new CharacterInformationPanel(mainCharacters);  //characterinformation
         add(BorderLayout.EAST, characterInformationPanel);
     }
 

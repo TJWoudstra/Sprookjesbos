@@ -13,7 +13,6 @@ public class CharacterInformation extends JPanel {
     JLabel hpLabel, spLabel, characterLabel, nameLabel;
 
     //setters
-
     public void setHpText(String hpText) {
         this.hpText.setText(hpText);
     }
@@ -30,10 +29,12 @@ public class CharacterInformation extends JPanel {
         this.nameLabel.setText(nameLabel);
     }
 
+    //constructor
     public CharacterInformation(){
         setLayout(new GridLayout(3,2,10,10));   //set layout
         Border border = BorderFactory.createEmptyBorder(5,5,5,5);
         setBackground(Color.lightGray);
+        setMaximumSize(new Dimension(300, 80));
 
         characterLabel = new JLabel("  Type");   //initialize textfields & labels
         nameLabel = new JLabel("Name");

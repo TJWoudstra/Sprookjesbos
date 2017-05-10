@@ -41,6 +41,13 @@ public abstract class MainCharacter extends Character {
 
     }
 
+    public String hpText() {
+        return getHitPoints() + " / " + getMaxHitPoints();
+    }
+    public String spText() {
+        return getSpellPoints() + " / " + getMaxSpellPoints();
+    }
+
     public void simpleAttack(Character character){
         int damage = 20 + getDice().nextInt(10);
         System.out.println("damage: " + damage );
