@@ -28,7 +28,7 @@ public class Battleview extends JPanel {
 
         this.mainCharacters = mainCharacters;
         try {
-            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.JPG"));
+            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.jpg"));
             for(int i = 0; i < mainCharacters.length;i++){
                 mainCharacters[i].setCharacterImage(ImageIO.read(getClass().getResource(mainCharacters[i].getImageLocation())));
             }

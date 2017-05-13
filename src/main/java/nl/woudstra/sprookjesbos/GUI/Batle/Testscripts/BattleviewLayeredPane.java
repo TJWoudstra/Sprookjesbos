@@ -18,7 +18,7 @@ public class BattleviewLayeredPane extends JLayeredPane {
 
     public BattleviewLayeredPane() {
         try {
-            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.JPG"));
+            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.jpg"));
 
         } catch (IOException ex) {
             // handle exception...
