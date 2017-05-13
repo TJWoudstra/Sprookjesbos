@@ -18,7 +18,6 @@ public class AttackTest {
     @Test
     public void enemyShouldDieAfter2Attacks(){
         Knight knight = new Knight();
-        knight.setDice(new Random(1));
         TestEnemy testEnemy = new TestEnemy();
 
         knight.simpleAttack(testEnemy); // damage = 20 + 5, health = 50 - 25 = 25

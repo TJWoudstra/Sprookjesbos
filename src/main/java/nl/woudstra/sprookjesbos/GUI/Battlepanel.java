@@ -18,6 +18,7 @@ public class Battlepanel extends JPanel {
     private Battleview battleview;                              //center
     private CharacterInformationPanel characterInformationPanel;     //east
 
+    //getters
     public InformationPanel getInformationPanel() {
         return informationPanel;
     }
@@ -30,6 +31,7 @@ public class Battlepanel extends JPanel {
         return characterInformationPanel;
     }
 
+    //constructor
 
     public Battlepanel(MainCharacter[] mainCharacters){
         this.mainCharacters = mainCharacters;
@@ -38,8 +40,7 @@ public class Battlepanel extends JPanel {
         informationPanel = new InformationPanel();    //informationPanel
         add(BorderLayout.SOUTH, informationPanel);
 
-        // battleview werkt nog niet
-        battleview = new Battleview();
+        battleview = new Battleview(mainCharacters);   //battleview
         add(BorderLayout.CENTER, battleview);
 
         characterInformationPanel = new CharacterInformationPanel(mainCharacters);  //characterinformation

@@ -1,12 +1,15 @@
 package nl.woudstra.sprookjesbos.characters;
 
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
  * Created by Tieme on 9-4-2017.
  */
 public abstract class Character {
-    private Random dice = new Random();
+    private BufferedImage characterImage;
+    private String imageLocation;
+
     public CharacterStatus status;
     public Resistances resistances;
     public Statistics statistics;
@@ -33,12 +36,20 @@ public abstract class Character {
                                                 //getters & setters
 
 
-    public Random getDice() {
-        return dice;
+    public BufferedImage getCharacterImage() {
+        return characterImage;
     }
 
-    public void setDice(Random dice) {
-        this.dice = dice;
+    public void setCharacterImage(BufferedImage characterImage) {
+        this.characterImage = characterImage;
+    }
+
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
     }
 
     public int getHitPoints() {                 //getters & setters

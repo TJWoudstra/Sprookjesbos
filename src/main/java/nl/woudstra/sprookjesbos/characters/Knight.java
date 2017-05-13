@@ -2,14 +2,19 @@ package nl.woudstra.sprookjesbos.characters;
 
 import nl.woudstra.sprookjesbos.characters.MainCharacter;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Created by Tieme on 28-4-2017.
  */
 public class Knight extends MainCharacter {
+
     public String getType(){
         return "Knight";
     }
     public Knight() {
+        setImageLocation("/images/Knight.gif");
+
         setMaxHitPoints(200);
         setBasicHitPoints(getMaxHitPoints());
         setHitPoints(getMaxHitPoints() );
