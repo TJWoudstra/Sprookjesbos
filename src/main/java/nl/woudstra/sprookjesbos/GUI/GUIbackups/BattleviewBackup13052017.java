@@ -20,7 +20,7 @@ public class BattleviewBackup13052017 extends JPanel {
     public BattleviewBackup13052017(MainCharacter[] mainCharacters) {
         this.mainCharacters = mainCharacters;
         try {
-            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.JPG"));
+            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.jpg"));
             knightImage = ImageIO.read(getClass().getResource("/images/Knight.gif"));
 
         } catch (IOException ex) {
