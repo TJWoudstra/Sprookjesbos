@@ -1,35 +1,29 @@
 package nl.woudstra.sprookjesbos.characters;
 
-import nl.woudstra.sprookjesbos.characters.MainCharacter;
-
-import java.awt.image.BufferedImage;
+import nl.woudstra.sprookjesbos.characters.attack.BasicAttack;
 
 /**
  * Created by Tieme on 28-4-2017.
  */
-public class Knight extends MainCharacter {
+public class Knight extends Character {
 
     public String getType(){
         return "Knight";
     }
-    public Knight() {
-        setImageLocation("/images/Knight.gif");
 
-        setMaxHitPoints(200);
-        setBasicHitPoints(getMaxHitPoints());
-        setHitPoints(getMaxHitPoints() );
+    public Knight(String name) {
+        super(name, 200, 20);
+        setImageLocation("Knight.gif");
 
-        setMaxSpellPoints(20);
-        setBasicSpellPoints(getMaxSpellPoints());
-        setSpellPoints(getMaxSpellPoints());
-
+        Statistics statistics = getStatistics();
         statistics.setSpeed(30);
         statistics.setStrength(50);
         statistics.setMagicPower(10);
 
-        weaponPossibilities.setCanHandleSword(true);
+        Abilities abilities = getAbilities();
+        abilities.setAbleToHandleSword(true);
+        abilities.setAbleToWearShield(true);
 
-        armorPossibilities.setCanWearShield(true);
-
+        addAttack(new BasicAttack(20, 10, "Simple attack"));
     }
 }

@@ -1,6 +1,6 @@
-package nl.woudstra.sprookjesbos.GUI.Batle;
+package nl.woudstra.sprookjesbos.GUI.battle;
 
-import nl.woudstra.sprookjesbos.characters.MainCharacter;
+import nl.woudstra.sprookjesbos.characters.Character;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,22 +11,22 @@ import java.awt.event.ActionListener;
  */
 public class AttackPanel extends JPanel {
     private JButton attackButton, specialMove1Button, specialMove2Button, specialMove3Button, itemButton;
-    private MainCharacter mainCharacter;
+    private Character character;
     private JLabel titleLabel;
 
-    public AttackPanel(MainCharacter mainCharacter){
-        this.mainCharacter = mainCharacter;
+    public AttackPanel(Character character){
+        this.character = character;
 
-        titleLabel = new JLabel("Select move for "+ mainCharacter.getName());
-        attackButton = new JButton("Attack");
+        if(!character.getAttacks().isEmpty()){
+            attackButton = new JButton(character.getAttacks().get(0).getDescription());
+        }
         attackButton.addActionListener(new AttackListener());
 
-        itemButton = new JButton("Item");
+        itemButton = new JButton("Use item");
         itemButton.addActionListener(new ItemListener());
 
-        super.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        add(titleLabel);
-        add(new JLabel(" "));
+        super.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+
         add(attackButton);
         add(itemButton);
 

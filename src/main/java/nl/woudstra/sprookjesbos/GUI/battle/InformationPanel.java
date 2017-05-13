@@ -1,4 +1,4 @@
-package nl.woudstra.sprookjesbos.GUI.Batle;
+package nl.woudstra.sprookjesbos.GUI.battle;
 
 import javax.swing.*;
 import java.awt.*;

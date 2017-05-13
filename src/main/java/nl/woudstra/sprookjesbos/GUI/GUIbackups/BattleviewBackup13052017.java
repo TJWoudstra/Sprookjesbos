@@ -1,16 +1,13 @@
+/*
 package nl.woudstra.sprookjesbos.GUI.GUIbackups;
 
-import nl.woudstra.sprookjesbos.characters.MainCharacter;
+import nl.woudstra.sprookjesbos.GUI.utils.ImageReader;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-/**
- * Created by Tieme & Sylvia on 2-5-2017.
- */
+
 public class BattleviewBackup13052017 extends JPanel {
     private MainCharacter[] mainCharacters;
 
@@ -19,13 +16,8 @@ public class BattleviewBackup13052017 extends JPanel {
 
     public BattleviewBackup13052017(MainCharacter[] mainCharacters) {
         this.mainCharacters = mainCharacters;
-        try {
-            backgroundBattle = ImageIO.read(getClass().getResource("/images/Weiland.jpg"));
-            knightImage = ImageIO.read(getClass().getResource("/images/Knight.gif"));
-
-        } catch (IOException ex) {
-            // handle exception...
-        }
+        backgroundBattle = ImageReader.getImage("Weiland.jpg");
+        knightImage = ImageReader.getImage("Knight.gif");
     }
 
     @Override
@@ -47,3 +39,4 @@ public class BattleviewBackup13052017 extends JPanel {
 
     }
 }
+*/
