@@ -1,4 +1,4 @@
-package nl.woudstra.sprookjesbos.GUI.Batle.Testscripts;
+package nl.woudstra.sprookjesbos.GUI.battle.Testscripts;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

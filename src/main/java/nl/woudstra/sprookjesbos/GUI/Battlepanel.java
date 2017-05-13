@@ -1,9 +1,9 @@
 package nl.woudstra.sprookjesbos.GUI;
 
-import nl.woudstra.sprookjesbos.GUI.Batle.Battleview;
-import nl.woudstra.sprookjesbos.GUI.Batle.CharacterInformationPanel;
-import nl.woudstra.sprookjesbos.GUI.Batle.InformationPanel;
-import nl.woudstra.sprookjesbos.characters.MainCharacter;
+import nl.woudstra.sprookjesbos.GUI.battle.Battleview;
+import nl.woudstra.sprookjesbos.GUI.battle.CharacterInformationPanel;
+import nl.woudstra.sprookjesbos.GUI.battle.InformationPanel;
+import nl.woudstra.sprookjesbos.characters.Team;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ import java.awt.*;
  * Created by Tieme & Sylvia on 3-5-2017.
  */
 public class Battlepanel extends JPanel {
-    private MainCharacter[] mainCharacters;
+    private Team player;
 
     private InformationPanel informationPanel;                  //south
     private Battleview battleview;                              //center
@@ -33,17 +33,17 @@ public class Battlepanel extends JPanel {
 
     //constructor
 
-    public Battlepanel(MainCharacter[] mainCharacters){
-        this.mainCharacters = mainCharacters;
+    public Battlepanel(Team player){
+        this.player = player;
         setLayout(new BorderLayout());    //layout
 
         informationPanel = new InformationPanel();    //informationPanel
         add(BorderLayout.SOUTH, informationPanel);
 
-        battleview = new Battleview(mainCharacters);   //battleview
+        battleview = new Battleview(player);   //battleview
         add(BorderLayout.CENTER, battleview);
 
-        characterInformationPanel = new CharacterInformationPanel(mainCharacters);  //characterinformation
+        characterInformationPanel = new CharacterInformationPanel(player);  //characterinformation
         add(BorderLayout.EAST, characterInformationPanel);
     }
 

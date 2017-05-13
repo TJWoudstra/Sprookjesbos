@@ -1,47 +1,67 @@
 package nl.woudstra.sprookjesbos.characters;
 
+import nl.woudstra.sprookjesbos.characters.attack.Attack;
+
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
  * Created by Tieme on 9-4-2017.
  */
-public abstract class Character {
-    private BufferedImage characterImage;
+public class Character {
+    private Resistances resistances = new Resistances();
+    private Statistics statistics = new Statistics();
+    private Abilities abilities = new Abilities();
+    private Equipment equipment = new Equipment();
+    private List<Attack> attacks = new ArrayList<>();
+    private CharacterStatus status;
+
+    private String name;
     private String imageLocation;
-
-    public CharacterStatus status;
-    public Resistances resistances;
-    public Statistics statistics;
-
-    private int hitPoints;                      //hitpoints, spellpoints
-    private int maxHitPoints;
-    private int spellPoints;
-    private int maxSpellPoints;
-
     private int armor;                          //armor, blockrate
     private int blockRate;
 
-    private int level;                          //level
+    public Character(String name, int maxHitpoints, int maxSpellpoints) {
+        this.name = name;
+        this.status = new CharacterStatus(maxHitpoints, maxSpellpoints);
+    }
 
-    public Character() {
-        status = new CharacterStatus();
-        resistances = new Resistances();
-        statistics = new Statistics();
+    public CharacterStatus getStatus() {
+        return status;
+    }
+
+    public Resistances getResistances() {
+        return resistances;
+    }
+
+    public Statistics getStatistics() {
+        return statistics;
+    }
+
+    public Abilities getAbilities() {
+        return abilities;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Attack> getAttacks(){
+        return attacks;
+    }
+
+    public void addAttack(Attack attack){
+        attacks.add(attack);
     }
 
     public String getType(){
         return "Character";
-    }
-                                                //getters & setters
-
-
-    public BufferedImage getCharacterImage() {
-        return characterImage;
-    }
-
-    public void setCharacterImage(BufferedImage characterImage) {
-        this.characterImage = characterImage;
     }
 
     public String getImageLocation() {
@@ -50,50 +70,6 @@ public abstract class Character {
 
     public void setImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
-    }
-
-    public int getHitPoints() {                 //getters & setters
-        return hitPoints;
-    }
-
-    public void setHitPoints(int hitPoints) {
-        if(hitPoints < 0)
-            this.hitPoints = 0;
-        else if(hitPoints > maxHitPoints)
-            this.hitPoints = maxHitPoints;
-        else{
-            this.hitPoints = hitPoints;
-        }
-    }
-
-    public int getMaxHitPoints() {
-        return maxHitPoints;
-    }
-
-    public void setMaxHitPoints(int maxHitPoints) {
-        this.maxHitPoints = maxHitPoints;
-    }
-
-    public int getSpellPoints() {
-        return spellPoints;
-    }
-
-    public void setSpellPoints(int spellPoints) {
-        if(spellPoints < 0)
-            this.spellPoints = 0;
-        else if(spellPoints > maxSpellPoints)
-            this.spellPoints = maxSpellPoints;
-        else {
-            this.spellPoints = spellPoints;
-        }
-    }
-
-    public int getMaxSpellPoints() {
-        return maxSpellPoints;
-    }
-
-    public void setMaxSpellPoints(int maxSpellPoints) {
-        this.maxSpellPoints = maxSpellPoints;
     }
 
     public int getArmor() {
@@ -112,11 +88,5 @@ public abstract class Character {
         this.blockRate = blockRate;
     }
 
-    public int getLevel() {
-        return level;
-    }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
 }

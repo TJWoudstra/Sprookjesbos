@@ -1,7 +1,7 @@
-package nl.woudstra.sprookjesbos.GUI.Batle;
+package nl.woudstra.sprookjesbos.GUI.battle;
 
-import nl.woudstra.sprookjesbos.GUI.Batle.Testscripts.BattleviewLayeredPane;
-import nl.woudstra.sprookjesbos.GUI.Batle.Testscripts.KnightPanel;
+import nl.woudstra.sprookjesbos.GUI.battle.Testscripts.BattleviewLayeredPane;
+import nl.woudstra.sprookjesbos.GUI.battle.Testscripts.KnightPanel;
 
 import javax.swing.*;
 import java.awt.*;
