@@ -28,11 +28,13 @@ public class SprookjebosFrame extends JFrame {
         mainCharacters[0].setName("Tieme");
         mainCharacters[0].incrementLevel();
         mainCharacters[1].setName("Sylvia");
+        mainCharacters[1].setFrontPosition(true);
         mainCharacters[2].setName("Bouke");
         mainCharacters[2].incrementLevel();
         mainCharacters[2].incrementLevel();
         mainCharacters[3].setName("Friso");
         mainCharacters[3].incrementLevel();
+        mainCharacters[3].setFrontPosition(true);
         mainCharacters[4].setName("Jiske");
     }
 

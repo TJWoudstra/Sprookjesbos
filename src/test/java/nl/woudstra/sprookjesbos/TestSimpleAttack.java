@@ -9,7 +9,7 @@ import nl.woudstra.sprookjesbos.characters.enemies.TestEnemy;
 public class TestSimpleAttack {
     public static void main(String [] args){
         Knight knight = new Knight();
-        TestEnemy testEnemy = new TestEnemy();
+        TestEnemy testEnemy = new TestEnemy(1,1);
 
         System.out.println("start HP van enemy: " + testEnemy.getHitPoints());
         knight.simpleAttack(testEnemy);

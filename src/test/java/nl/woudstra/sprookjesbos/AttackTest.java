@@ -18,7 +18,7 @@ public class AttackTest {
     @Test
     public void enemyShouldDieAfter2Attacks(){
         Knight knight = new Knight();
-        TestEnemy testEnemy = new TestEnemy();
+        TestEnemy testEnemy = new TestEnemy(1,1);
 
         knight.simpleAttack(testEnemy); // damage = 20 + 5, health = 50 - 25 = 25
         assertEquals(25, testEnemy.getHitPoints());

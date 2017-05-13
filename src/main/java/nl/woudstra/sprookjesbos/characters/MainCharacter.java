@@ -15,11 +15,13 @@ public abstract class MainCharacter extends Character {
     private int additionalHitpoints;
     private int basicSpellPoints;     //maxSpellPoints == basicSpellpoints + addditionalSpellpoints
     private int additionalSpellPoints;
+    private boolean frontPosition;
 
     WeaponPossibilities weaponPossibilities;    //weapons a maincharacter can handle
     ArmorPossibilities armorPossibilities;      //armor a maincharacter can wear
     Equipment equipment;                        //weapon(s) and armor a character wears
 
+    //constructor
     public MainCharacter() {
         totalMainCharacters++;
         mainCharacterID = totalMainCharacters - 1;
@@ -104,5 +106,13 @@ public abstract class MainCharacter extends Character {
 
     public void setAdditionalSpellPoints(int additionalSpellPoints) {
         this.additionalSpellPoints = additionalSpellPoints;
+    }
+
+    public boolean isFrontPosition() {
+        return frontPosition;
+    }
+
+    public void setFrontPosition(boolean frontPosition) {
+        this.frontPosition = frontPosition;
     }
 }
