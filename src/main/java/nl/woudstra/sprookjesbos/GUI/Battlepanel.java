@@ -3,7 +3,10 @@ package nl.woudstra.sprookjesbos.GUI;
 import nl.woudstra.sprookjesbos.GUI.battle.Battleview;
 import nl.woudstra.sprookjesbos.GUI.battle.CharacterInformationPanel;
 import nl.woudstra.sprookjesbos.GUI.battle.InformationPanel;
-import nl.woudstra.sprookjesbos.characters.Team;
+import nl.woudstra.sprookjesbos.characters.enemies.Enemy;
+import nl.woudstra.sprookjesbos.characters.player.Player;
+
+import java.util.List;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,16 +34,16 @@ public class Battlepanel extends JPanel {
 
     //constructor
 
-    public Battlepanel(Team player, Team enemy){
+    public Battlepanel(List<Player> players, List<Enemy> enemies){
         setLayout(new BorderLayout());    //layout
 
         informationPanel = new InformationPanel();    //informationPanel
         add(BorderLayout.SOUTH, informationPanel);
 
-        battleview = new Battleview(player, enemy);   //battleview
+        battleview = new Battleview(players, enemies);   //battleview
         add(BorderLayout.CENTER, battleview);
 
-        characterInformationPanel = new CharacterInformationPanel(player);  //characterinformation
+        characterInformationPanel = new CharacterInformationPanel(players);  //characterinformation
         add(BorderLayout.EAST, characterInformationPanel);
     }
 

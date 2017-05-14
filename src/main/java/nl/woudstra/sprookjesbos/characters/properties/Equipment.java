@@ -1,4 +1,4 @@
-package nl.woudstra.sprookjesbos.characters;
+package nl.woudstra.sprookjesbos.characters.properties;
 
 import nl.woudstra.sprookjesbos.items.Weapon;
 

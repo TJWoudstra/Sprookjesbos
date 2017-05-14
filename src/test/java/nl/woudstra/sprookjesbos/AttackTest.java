@@ -1,9 +1,8 @@
 package nl.woudstra.sprookjesbos;
 
-import nl.woudstra.sprookjesbos.characters.*;
-import nl.woudstra.sprookjesbos.characters.Character;
 import nl.woudstra.sprookjesbos.characters.attack.Attack;
 import nl.woudstra.sprookjesbos.characters.enemies.AngryBird;
+import nl.woudstra.sprookjesbos.characters.player.Knight;
 import org.junit.Test;
 
 import java.util.ArrayList;

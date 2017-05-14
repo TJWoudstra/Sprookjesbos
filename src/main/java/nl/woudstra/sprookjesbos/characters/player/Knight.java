@@ -1,11 +1,13 @@
-package nl.woudstra.sprookjesbos.characters;
+package nl.woudstra.sprookjesbos.characters.player;
 
+import nl.woudstra.sprookjesbos.characters.properties.Abilities;
+import nl.woudstra.sprookjesbos.characters.properties.Statistics;
 import nl.woudstra.sprookjesbos.characters.attack.BasicAttack;
 
 /**
  * Created by Tieme on 28-4-2017.
  */
-public class Knight extends Character {
+public class Knight extends Player {
 
     public String getType(){
         return "Knight";

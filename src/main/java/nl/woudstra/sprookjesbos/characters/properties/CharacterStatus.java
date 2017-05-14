@@ -1,4 +1,4 @@
-package nl.woudstra.sprookjesbos.characters;
+package nl.woudstra.sprookjesbos.characters.properties;
 
 /**
  * Created by Tieme on 30-4-2017.
@@ -7,10 +7,12 @@ public class CharacterStatus {
     private static final double GROW_LEVEL_FACTOR = 1.05;
     private boolean isAlive = true;
 
-    private int hitPoints = 0;                      //hitpoints, spellpoints
-    private int maxHitPoints = 0;
+    private int basicHitpoints = 0; // calculated based on level
+    private int additionalHitpoints = 0; // calculated based on items, potions, etc
+    private int hitPoints = 0;
+    private int basicSpellpoints = 0;
+    private int additionalSpellpoints = 0;
     private int spellPoints = 0;
-    private int maxSpellPoints = 0;
     private int level = 0;
     private int experience = 0;
 
@@ -21,11 +23,11 @@ public class CharacterStatus {
     private boolean canUsePotions = false;
     private boolean canAttack = true;
 
-    public CharacterStatus(int maxHitPoints, int maxSpellPoints) {
-        this.maxHitPoints = maxHitPoints;
-        this.hitPoints = maxHitPoints;
-        this.maxSpellPoints = maxSpellPoints;
-        this.spellPoints = maxSpellPoints;
+    public CharacterStatus(int hitpoints, int spellpoints) {
+        this.basicHitpoints = hitpoints;
+        this.hitPoints = hitpoints;
+        this.basicSpellpoints = spellpoints;
+        this.spellPoints = spellpoints;
     }
 
     //getters & setters
@@ -33,9 +35,9 @@ public class CharacterStatus {
     public void incrementLevel(){
         level++;
         this.hitPoints = (int) (hitPoints * GROW_LEVEL_FACTOR);
-        this.maxHitPoints = (int) (maxHitPoints * GROW_LEVEL_FACTOR);
+        this.basicHitpoints = (int) (basicHitpoints * GROW_LEVEL_FACTOR);
         this.spellPoints = (int) (spellPoints * GROW_LEVEL_FACTOR);
-        this.maxSpellPoints = (int) (maxSpellPoints * GROW_LEVEL_FACTOR);
+        this.basicSpellpoints = (int) (basicSpellpoints * GROW_LEVEL_FACTOR);
     }
 
     public int getHitPoints() {
@@ -46,11 +48,19 @@ public class CharacterStatus {
         if(hitPoints <= 0) {
             this.hitPoints = 0;
             this.isAlive = false;
-        } else if(hitPoints > maxHitPoints){
-            this.hitPoints = maxHitPoints;
+        } else if(hitPoints > getMaxHitPoints()){
+            this.hitPoints = getMaxHitPoints();
         } else {
             this.hitPoints = hitPoints;
         }
+    }
+
+    public void setAdditionalHitpoints(int additionalHitpoints) {
+        this.additionalHitpoints = additionalHitpoints;
+    }
+
+    public void setAdditionalSpellpoints(int additionalSpellpoints){
+        this.additionalSpellpoints = additionalSpellpoints;
     }
 
     public void applyDamage(int damage) {
@@ -58,11 +68,7 @@ public class CharacterStatus {
     }
 
     public int getMaxHitPoints() {
-        return maxHitPoints;
-    }
-
-    public void setMaxHitPoints(int maxHitPoints) {
-        this.maxHitPoints = maxHitPoints;
+        return basicHitpoints + additionalHitpoints;
     }
 
     public int getSpellPoints() {
@@ -72,19 +78,15 @@ public class CharacterStatus {
     public void setSpellPoints(int spellPoints) {
         if(spellPoints < 0)
             this.spellPoints = 0;
-        else if(spellPoints > maxSpellPoints)
-            this.spellPoints = maxSpellPoints;
+        else if(spellPoints > getMaxSpellPoints())
+            this.spellPoints = getMaxSpellPoints();
         else {
             this.spellPoints = spellPoints;
         }
     }
 
     public int getMaxSpellPoints() {
-        return maxSpellPoints;
-    }
-
-    public void setMaxSpellPoints(int maxSpellPoints) {
-        this.maxSpellPoints = maxSpellPoints;
+        return basicSpellpoints + additionalSpellpoints;
     }
 
     public int getLevel() {

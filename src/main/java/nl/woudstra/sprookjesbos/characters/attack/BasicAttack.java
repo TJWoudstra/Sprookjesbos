@@ -1,6 +1,7 @@
 package nl.woudstra.sprookjesbos.characters.attack;
 
-import nl.woudstra.sprookjesbos.characters.Character;
+import nl.woudstra.sprookjesbos.characters.BaseCharacter;
+
 import java.util.Random;
 
 /**
@@ -19,9 +20,9 @@ public class BasicAttack implements Attack {
     }
 
     @Override
-    public void attack(Character character) {
+    public void attack(BaseCharacter baseCharacter) {
         int damage = minDamage + dice.nextInt(varDamage);
-        character.getStatus().applyDamage(damage);
+        baseCharacter.getStatus().applyDamage(damage);
     }
 
     @Override

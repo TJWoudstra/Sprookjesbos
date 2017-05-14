@@ -1,9 +1,10 @@
 package nl.woudstra.sprookjesbos.GUI.battle;
 
-import nl.woudstra.sprookjesbos.characters.Character;
-import nl.woudstra.sprookjesbos.characters.Team;
+import nl.woudstra.sprookjesbos.characters.enemies.Enemy;
+import nl.woudstra.sprookjesbos.characters.player.Player;
 
 import nl.woudstra.sprookjesbos.GUI.utils.ImageReader;
+import java.util.List;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,12 +13,12 @@ import java.awt.*;
  * Created by Tieme & Sylvia on 2-5-2017.
  */
 public class Battleview extends JPanel {
-    private Team player;
-    private Team enemy;
+    private List<Player> players;
+    private List<Enemy> enemies;
 
-    public Battleview(Team player, Team enemy) {
-        this.player = player;
-        this.enemy = enemy;
+    public Battleview(List<Player> players, List<Enemy> enemies) {
+        this.players = players;
+        this.enemies = enemies;
     }
 
     @Override
@@ -29,7 +30,7 @@ public class Battleview extends JPanel {
 
         // draw players
         int playerIndex = 0;
-        for(Character player : player.getCharacters()){
+        for(Player player : players){
             Image characterImage = ImageReader.getImage(player.getImageName(), getWidth() / 13, getHeight() / 10, Image.SCALE_SMOOTH);
             g.drawImage(characterImage, getHPosPlayer(player.isFrontPosition()), getVPosPlayer(playerIndex), this);
             playerIndex++;
@@ -37,8 +38,8 @@ public class Battleview extends JPanel {
 
         // draw enemies
         int enemyIndex = 0;
-        for(Character character : enemy.getCharacters()){
-            Image enemyImage = ImageReader.getImage(character.getImageName(), getWidth() / 13, getHeight() / 10, Image.SCALE_SMOOTH);
+        for(Enemy enemy : enemies){
+            Image enemyImage = ImageReader.getImage(enemy.getImageName(), getWidth() / 13, getHeight() / 10, Image.SCALE_SMOOTH);
             g.drawImage(enemyImage, 0, getVposEnemy(enemyIndex), this);
             enemyIndex++;
         }

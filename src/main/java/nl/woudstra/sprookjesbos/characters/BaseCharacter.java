@@ -1,6 +1,10 @@
 package nl.woudstra.sprookjesbos.characters;
 
 import nl.woudstra.sprookjesbos.characters.attack.Attack;
+import nl.woudstra.sprookjesbos.characters.properties.CharacterStatus;
+import nl.woudstra.sprookjesbos.characters.properties.Equipment;
+import nl.woudstra.sprookjesbos.characters.properties.Resistances;
+import nl.woudstra.sprookjesbos.characters.properties.Statistics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +12,9 @@ import java.util.List;
 /**
  * Created by Tieme on 9-4-2017.
  */
-public class Character {
+public class BaseCharacter {
     private Resistances resistances = new Resistances();
     private Statistics statistics = new Statistics();
-    private Abilities abilities = new Abilities();
-    private Equipment equipment = new Equipment();
     private List<Attack> attacks = new ArrayList<>();
     private CharacterStatus status;
 
@@ -20,9 +22,8 @@ public class Character {
     private String imageName;
     private int armor;                          //armor, blockrate
     private int blockRate;
-    private boolean frontPosition;
 
-    public Character(String name, int maxHitpoints, int maxSpellpoints, String imageName) {
+    public BaseCharacter(String name, int maxHitpoints, int maxSpellpoints, String imageName) {
         this.name = name;
         this.status = new CharacterStatus(maxHitpoints, maxSpellpoints);
         this.imageName = imageName;
@@ -40,14 +41,6 @@ public class Character {
         return statistics;
     }
 
-    public Abilities getAbilities() {
-        return abilities;
-    }
-
-    public Equipment getEquipment() {
-        return equipment;
-    }
-
     public String getName() {
         return name;
     }
@@ -61,7 +54,7 @@ public class Character {
     }
 
     public String getType(){
-        return "Character";
+        return "BaseCharacter";
     }
 
     public String getImageName() {
@@ -86,13 +79,5 @@ public class Character {
 
     public void setBlockRate(int blockRate) {
         this.blockRate = blockRate;
-    }
-
-    public boolean isFrontPosition() {
-        return frontPosition;
-    }
-
-    public void setFrontPosition(boolean frontPosition) {
-        this.frontPosition = frontPosition;
     }
 }
