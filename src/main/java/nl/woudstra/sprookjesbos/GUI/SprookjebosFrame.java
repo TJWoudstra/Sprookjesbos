@@ -11,12 +11,12 @@ import java.awt.*;
 public class SprookjebosFrame extends JFrame {
     private Battlepanel battlepanel;
 
-    public SprookjebosFrame(Team player){
+    public SprookjebosFrame(Team player, Team enemy){
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sprookjesbos V0.1");
         setMinimumSize(new Dimension(1200,700));
-        battlepanel = new Battlepanel(player);
+        battlepanel = new Battlepanel(player, enemy);
         add(BorderLayout.CENTER, battlepanel);
     }
 

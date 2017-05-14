@@ -2,11 +2,9 @@ package nl.woudstra.sprookjesbos.GUI.battle.Testscripts;
 
 import nl.woudstra.sprookjesbos.GUI.utils.ImageReader;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 /**
  * Created by Tieme & Sylvia on 2-5-2017.
@@ -19,7 +17,7 @@ public class BattleviewLayeredPane extends JLayeredPane {
 
 
     public BattleviewLayeredPane() {
-        backgroundBattle = ImageReader.getImage("Weiland.jpg");
+        backgroundBattle = ImageReader.getBufferedImage("Weiland.jpg");
         x = getWidth();
         y = getHeight();
     }

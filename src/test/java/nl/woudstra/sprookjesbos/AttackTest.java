@@ -1,7 +1,9 @@
 package nl.woudstra.sprookjesbos;
 
 import nl.woudstra.sprookjesbos.characters.*;
-import nl.woudstra.sprookjesbos.characters.enemies.TestEnemy;
+import nl.woudstra.sprookjesbos.characters.Character;
+import nl.woudstra.sprookjesbos.characters.attack.Attack;
+import nl.woudstra.sprookjesbos.characters.enemies.AngryBird;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,16 +19,18 @@ public class AttackTest {
 
     @Test
     public void enemyShouldDieAfter2Attacks(){
-        Knight knight = new Knight();
-        TestEnemy testEnemy = new TestEnemy(1,1);
+        Knight knight = new Knight("TestKnight");
+        AngryBird testEnemy = new AngryBird();
 
-        knight.simpleAttack(testEnemy); // damage = 20 + 5, health = 50 - 25 = 25
-        assertEquals(25, testEnemy.getHitPoints());
-        assertEquals(true, testEnemy.status.isAlive());
+        Attack attack = knight.getAttacks().get(0);
+        attack.setSeed(1L);
+        attack.attack(testEnemy); // damage = 20 + 5, health = 50 - 25 = 25
+        assertEquals(25, testEnemy.getStatus().getHitPoints());
+        assertEquals(true, testEnemy.getStatus().isAlive());
 
-        knight.simpleAttack(testEnemy); // damage = 20 + 8, health = 25 - 28 = -3, but cannot be negative
-        assertEquals(0, testEnemy.getHitPoints());
-        assertEquals(false, testEnemy.status.isAlive());
+        attack.attack(testEnemy); // damage = 20 + 8, health = 25 - 28 = -3, but cannot be negative
+        assertEquals(0, testEnemy.getStatus().getHitPoints());
+        assertEquals(false, testEnemy.getStatus().isAlive());
     }
 
     @Test

@@ -1,30 +1,19 @@
 package nl.woudstra.sprookjesbos.GUI;
 
+import nl.woudstra.sprookjesbos.GUI.utils.ImageReader;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import javax.swing.JPanel;
+
 /**
  * Created by Tieme on 3-5-2017.
  */
-
-import java.awt.Graphics;
-        import java.awt.image.BufferedImage;
-        import java.io.File;
-        import java.io.IOException;
-import java.io.InputStream;
-import java.util.logging.Level;
-        import java.util.logging.Logger;
-        import javax.imageio.ImageIO;
-        import javax.swing.JPanel;
-
 public class PlaatjeOefening extends JPanel{
 
     private BufferedImage image;
 
     public PlaatjeOefening() {
-        try {
-            image = ImageIO.read(getClass().getResource("/images/Knight.JPG"));
-
-        } catch (IOException ex) {
-            // handle exception...
-        }
+        image = ImageReader.getBufferedImage("Knight.JPG");
     }
 
     @Override

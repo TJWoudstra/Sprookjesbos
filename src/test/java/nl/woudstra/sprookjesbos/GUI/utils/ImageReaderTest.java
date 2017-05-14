@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
  */
 public class ImageReaderTest {
     @Test
-    public void getImage() throws Exception {
-        assertTrue(ImageReader.getImage("Knight.gif") != null);
+    public void getBufferedImage() throws Exception {
+        assertTrue(ImageReader.getBufferedImage("Knight.gif") != null);
     }
 
 }

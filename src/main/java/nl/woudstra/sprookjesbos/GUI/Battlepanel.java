@@ -12,8 +12,6 @@ import java.awt.*;
  * Created by Tieme & Sylvia on 3-5-2017.
  */
 public class Battlepanel extends JPanel {
-    private Team player;
-
     private InformationPanel informationPanel;                  //south
     private Battleview battleview;                              //center
     private CharacterInformationPanel characterInformationPanel;     //east
@@ -33,14 +31,13 @@ public class Battlepanel extends JPanel {
 
     //constructor
 
-    public Battlepanel(Team player){
-        this.player = player;
+    public Battlepanel(Team player, Team enemy){
         setLayout(new BorderLayout());    //layout
 
         informationPanel = new InformationPanel();    //informationPanel
         add(BorderLayout.SOUTH, informationPanel);
 
-        battleview = new Battleview(player);   //battleview
+        battleview = new Battleview(player, enemy);   //battleview
         add(BorderLayout.CENTER, battleview);
 
         characterInformationPanel = new CharacterInformationPanel(player);  //characterinformation

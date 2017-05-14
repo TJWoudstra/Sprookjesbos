@@ -1,6 +1,7 @@
 package nl.woudstra.sprookjesbos.GUI.utils;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.nio.file.Paths;
 
@@ -9,7 +10,7 @@ import java.nio.file.Paths;
  */
 public class ImageReader {
 
-    public static BufferedImage getImage(String imageName){
+    public static BufferedImage getBufferedImage(String imageName){
         BufferedImage image = null;
 
         try {
@@ -19,5 +20,10 @@ public class ImageReader {
         }
 
         return image;
+    }
+
+    public static Image getImage(String imageName, int x, int y, int imageScale){
+        BufferedImage image = getBufferedImage(imageName);
+        return image.getScaledInstance(x, y, imageScale);
     }
 }

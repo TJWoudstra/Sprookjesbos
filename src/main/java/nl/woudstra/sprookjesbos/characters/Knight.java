@@ -12,8 +12,7 @@ public class Knight extends Character {
     }
 
     public Knight(String name) {
-        super(name, 200, 20);
-        setImageLocation("Knight.gif");
+        super(name, 200, 20, "Knight.gif");
 
         Statistics statistics = getStatistics();
         statistics.setSpeed(30);

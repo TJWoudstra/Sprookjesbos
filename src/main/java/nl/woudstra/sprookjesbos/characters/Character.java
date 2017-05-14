@@ -2,10 +2,8 @@ package nl.woudstra.sprookjesbos.characters;
 
 import nl.woudstra.sprookjesbos.characters.attack.Attack;
 
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by Tieme on 9-4-2017.
@@ -19,13 +17,15 @@ public class Character {
     private CharacterStatus status;
 
     private String name;
-    private String imageLocation;
+    private String imageName;
     private int armor;                          //armor, blockrate
     private int blockRate;
+    private boolean frontPosition;
 
-    public Character(String name, int maxHitpoints, int maxSpellpoints) {
+    public Character(String name, int maxHitpoints, int maxSpellpoints, String imageName) {
         this.name = name;
         this.status = new CharacterStatus(maxHitpoints, maxSpellpoints);
+        this.imageName = imageName;
     }
 
     public CharacterStatus getStatus() {
@@ -64,12 +64,12 @@ public class Character {
         return "Character";
     }
 
-    public String getImageLocation() {
-        return imageLocation;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setImageLocation(String imageLocation) {
-        this.imageLocation = imageLocation;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
     public int getArmor() {
@@ -88,5 +88,11 @@ public class Character {
         this.blockRate = blockRate;
     }
 
+    public boolean isFrontPosition() {
+        return frontPosition;
+    }
 
+    public void setFrontPosition(boolean frontPosition) {
+        this.frontPosition = frontPosition;
+    }
 }
