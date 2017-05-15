@@ -32,7 +32,7 @@ public class Battleview extends JPanel {
         int playerIndex = 0;
         for(Player player : players){
             Image characterImage = ImageReader.getImage(player.getImageName(), getWidth() / 13, getHeight() / 10, Image.SCALE_SMOOTH);
-            g.drawImage(characterImage, getHPosPlayer(player.isFrontPosition()), getVPosPlayer(playerIndex), this);
+            g.drawImage(characterImage, getHorizontalPosPlayer(player.isFrontPosition()), getVerticalPosPlayer(playerIndex), this);
             playerIndex++;
         }
 
@@ -40,23 +40,33 @@ public class Battleview extends JPanel {
         int enemyIndex = 0;
         for(Enemy enemy : enemies){
             Image enemyImage = ImageReader.getImage(enemy.getImageName(), getWidth() / 13, getHeight() / 10, Image.SCALE_SMOOTH);
-            g.drawImage(enemyImage, 0, getVposEnemy(enemyIndex), this);
+            g.drawImage(enemyImage, getHorizontalPosEnemy(enemy.getHorizontalPosition()), getVerticalPosEnemy(enemy.getVerticalPosition()), this);
             enemyIndex++;
         }
     }
 
-    private int getHPosPlayer(boolean frontPosition){
+    private int getHorizontalPosPlayer(boolean frontPosition){
         return (int) (getWidth() * (frontPosition ? 0.83 : 0.90));
     }
 
-    private int getVPosPlayer(int indexPlayer){
+    private int getVerticalPosPlayer(int indexPlayer){
         double start = 0.25;
         double increase = 0.15;
         double factor = start + increase * indexPlayer;
         return (int) (factor * getHeight());
     }
 
-    private int getVposEnemy(int indexEnemy){
-        return getVPosPlayer(indexEnemy * 2);
+    private int getVerticalPosEnemy(int verticalPosition){
+        double start = 0.1;
+        double increase = 0.15;
+        double factor = start + increase * verticalPosition;
+        return (int) (factor * getHeight());
+    }
+
+    private int getHorizontalPosEnemy(int horizontalPosition){
+        double start = 0.73;
+        double decrease = 0.07;
+        double factor = start - decrease * horizontalPosition;
+        return (int) (factor * getWidth());
     }
 }

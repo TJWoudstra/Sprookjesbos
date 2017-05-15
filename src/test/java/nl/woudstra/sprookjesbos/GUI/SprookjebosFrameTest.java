@@ -27,6 +27,17 @@ public class SprookjebosFrameTest {
         List<Enemy> enemies = new ArrayList<>();
         enemies.add(new AngryBird());
         enemies.add(new AngryBird());
+        enemies.add(new AngryBird());
+        enemies.add(new AngryBird());
+        enemies.add(new AngryBird());
+        enemies.get(0).setGridPosition(1,1);
+        enemies.get(1).setGridPosition(2,2);
+        enemies.get(2).setGridPosition(1,2);
+        enemies.get(3).setGridPosition(6,3);
+        enemies.get(4).setGridPosition(10,4);
+
+
+
 
         SprookjebosFrame sprookjebosFrame = new SprookjebosFrame(players, enemies);
         sprookjebosFrame.setVisible(true);
